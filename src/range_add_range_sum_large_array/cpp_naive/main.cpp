@@ -10,7 +10,7 @@ const long long mod = 998244353;
 void solve() {
     int n, q;
     cin >> n >> q;
-    vector<long long> A(n, 0);
+    vector<int> A(n, 0);
     long long s = 0;
     for (int qidx = 0; qidx < q; ++qidx) {
         int com;
@@ -23,7 +23,7 @@ void solve() {
             r ^= s;
             x ^= s;
             --l;
-            for (int i = l; i < r; ++i) {
+            for (long long i = l; i < r; ++i) {
                 A[i] = (A[i] + x) % mod;
             }
         } else {
@@ -33,7 +33,7 @@ void solve() {
             r ^= s;
             --l;
             long long ans = 0;
-            for (int i = l; i < r; ++i) {
+            for (long long i = l; i < r; ++i) {
                 ans += A[i];
                 ans %= mod;
             }

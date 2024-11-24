@@ -6,13 +6,13 @@
 ##   id: The problem ID (typically starts from A) used to order problems.
 ##   time_limit: The time limit of this problem in seconds.
 
-pid='A'
+pid='RangeAddRangeSum(LargeArray,Online)'
 problem(
     time_limit=10.0,
     id=pid,
-    title=pid+": sample-ナンってナン回言った？",
-    wiki_name="問題/ナンってナン回言った？",
-    assignees=["tubuann", "wakuwinmail"],
+    title=pid+": RangeAddRangeSum(LargeArray,Online)",
+    wiki_name="RangeAddRangeSum(LargeArray,Online)",
+    assignees=["titan23"],
     need_custom_judge=False,
-    # reference_solution="",
+    reference_solution="cpp_main",
 )

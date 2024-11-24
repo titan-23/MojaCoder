@@ -50,28 +50,35 @@ S pow(S s, IndexType k) {
     return {(s.value*k)%mod, s.size*k};
 }
 
-const int num_of_type = 2;
+const int num_of_type = 4;
 std::string case_type[num_of_type] = {
     "10_random_small",
-    "20_random_large"
+    "20_random_large",
+    "30_random_max",
+    "40_small_width",
 };
-int num_of_case[num_of_type] = {20, 20};
-int min_n[num_of_type] = {1, 10000};
-int max_n[num_of_type] = {100, 10000};
-int min_q[num_of_type] = {1, 100000};
-int max_q[num_of_type] = {10000, 100000};
+int num_of_case[num_of_type] = {10, 10, 5, 5};
+int min_n[num_of_type] = {1,          (int)(1e2), (int)(1e8), (int)(1e8)};
+int max_n[num_of_type] = {100,        (int)(1e6), (int)(1e9), (int)(1e9)};
+int min_q[num_of_type] = {(int)(1e1), (int)(1e5), (int)(1e5), (int)(1e5)};
+int max_q[num_of_type] = {(int)(2e2), (int)(2e5), (int)(2e5), (int)(2e5)};
 
 XRand Rnd(334);
 
 int main() {
-    for(int typenum=0; typenum<num_of_type; ++typenum) {
-        for(int casenum=0;casenum<num_of_case[typenum];++casenum){
+    for (int typenum = 0; typenum < num_of_type; ++typenum) {
+        for (int casenum = 0; casenum < num_of_case[typenum]; ++casenum){
 
-            std::string file_name=case_type[typenum]+std::to_string(casenum)+".in";
+            std::string file_name = case_type[typenum] + std::to_string(casenum) + ".in";
             std::ofstream output(file_name);
 
             int n = Rnd.NextInt(min_n[typenum], max_n[typenum]);
             int q = Rnd.NextInt(min_q[typenum], max_q[typenum]);
+
+            if (casenum == num_of_case[typenum]-1) {
+                n = max_n[typenum];
+                q = max_q[typenum];
+            }
 
             output << n << " " << q << "\n";
 
@@ -88,6 +95,18 @@ int main() {
                     if (l > r) std::swap(l, r);
                     int x = Rnd.NextInt(1, MAX_X);
 
+                    if (case_type[typenum] == "40_small_width") {
+                        int d = Rnd.NextInt(1, 10);
+                        int l = Rnd.NextInt(1, n-d-1);
+                        int r = l + d;
+                        int x = Rnd.NextInt(1, MAX_X);
+                    } else if (case_type[typenum] == "30_random_max") {
+                        int d = Rnd.NextInt(1, 1000);
+                        int l = d;
+                        int r = n - d;
+                        int x = Rnd.NextInt(MAX_X-d, MAX_X);
+                    }
+
                     seg.apply(l-1, r, x);
 
                     int a = l ^ acc;
@@ -98,6 +117,16 @@ int main() {
                     int l = Rnd.NextInt(1, n);
                     int r = Rnd.NextInt(1, n);
                     if (l > r) std::swap(l, r);
+
+                    if (case_type[typenum] == "40_small_width") {
+                        int d = Rnd.NextInt(1, 10);
+                        l = Rnd.NextInt(1, n-d-1);
+                        r = l + d;
+                    } else if (case_type[typenum] == "30_random_max") {
+                        int d = Rnd.NextInt(1, 1000);
+                        l = d;
+                        r = n - d;
+                    }
 
                     int a = l ^ acc;
                     int b = r ^ acc;

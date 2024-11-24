@@ -2,7 +2,7 @@
 
 ## Solution definition.
 cxx_solution(
-    src='main.cpp',
-    flags=['-std=c++20', '-O2', '-I./../../../Library_cpp'],
-    challenge_cases=[]
+    src="main.cpp",
+    flags=["-std=c++20", "-O2", "-I./../../../../Library_cpp"],
+    challenge_cases=[],
 )
