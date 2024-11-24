@@ -1,0 +1,15 @@
+# -*- coding: utf-8; mode: python -*-
+
+## You can load plugins here.
+use_plugin('merged_test')
+use_plugin('wikify')
+use_plugin('wikify_full')
+use_plugin('htmlify_full')
+
+wikify_config(
+  url="http://hcpc.php.xdomain.jp/tsurai/",
+  page="北大合宿23/作業状況(自動生成)",
+  encoding="utf-8",
+  auth_realm="Member Site",
+  auth_username="tsurai",
+  auth_password="hokudai")

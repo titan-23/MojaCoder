@@ -1,0 +1,18 @@
+# -*- coding: utf-8; mode: python -*-
+
+## Problem definition.
+## Required fields are:
+##   title: The problem title shown in test summary.
+##   id: The problem ID (typically starts from A) used to order problems.
+##   time_limit: The time limit of this problem in seconds.
+
+pid='A'
+problem(
+    time_limit=10.0,
+    id=pid,
+    title=pid+": sample-ナンってナン回言った？",
+    wiki_name="問題/ナンってナン回言った？",
+    assignees=["tubuann", "wakuwinmail"],
+    need_custom_judge=False,
+    # reference_solution="",
+)

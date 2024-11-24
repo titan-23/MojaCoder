@@ -1,0 +1,10 @@
+# choose mode ('docs' or 'local')
+mode = "local"
+
+# problem id (it is used for the name of output html file)
+id = "E"
+
+# pato to a statement, output params
+statement_path = "./statement/statement.md"
+params_path = "./tests/constraints.hpp"
+lang = "ja"
