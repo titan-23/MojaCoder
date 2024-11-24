@@ -1,0 +1,4 @@
+# -*- coding: utf-8; mode: python -*-
+
+## Solution definition.
+cxx_solution(src='main.cpp', flags=['-std=c++20', '-O2', '-I./../../../Library_cpp'])

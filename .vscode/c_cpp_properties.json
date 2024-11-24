@@ -1,22 +1,16 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Users/titan/source/Library_cpp/titan_cpplib/**",
-                "C:/Users/titan/source/Library_cpp/**",
+                "/home/titan/source/Library_cpp/*"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.20348.0",
-            "compilerPath": "C:/mingw64/bin/c++.exe",
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x86",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
